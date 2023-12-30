@@ -1,6 +1,25 @@
 version: '3.3'
 
+networks:
+  app_network:
+    ipam:
+      config:
+        - subnet: 172.21.84.0/24
 services:
+  haproxy:
+    image: haproxy:latest
+    volumes:
+      - ./config/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "8100:80"
+    depends_on:
+      - tuspdm201
+      - tuspdm202
+      - tuspdm203
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.100
+
   tuspdm201:
     image: httpd:latest
     volumes:
@@ -163,8 +182,3 @@ services:
 
 
 
-networks:
-  app_network:
-    ipam:
-      config:
-        - subnet: 172.21.84.0/24

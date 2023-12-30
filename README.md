@@ -14,7 +14,15 @@ https://docs.docker.com/compose/install/linux/#install-the-plugin-manually
 
 `docker-compose up -d`
 
-2. Check the web server UI in your browser by going to http://localhost:8108
+2. Open the `index.html` file in this folder in your web browser.
+
+![Dashboard](home.png)
+
+3. Open http://localhost:8100.  This is the load balancer which sends the connection to one of 3 servers (tuspdm201, tuspdm202 or tuspdm203.)  The load balancer randomly picks one of the servers.
+
+4. View the load balancer stats here http://localhost:8100/stats.
+
+![Load Balancer Stats](haproxy.png)
 
 # Test Scenarios
 
