@@ -1,8 +1,170 @@
 version: '3.3'
 
 services:
-  webserver:
+  tuspdm201:
     image: httpd:latest
+    volumes:
+      - ./config/tuspdm201/apache:/usr/local/apache2/htdocs/
     ports:
-      - "8080:80"
+      - "8108:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.108
 
+  tuspdm202:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm202/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8109:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.109
+
+  tuspdm203:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm203/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8110:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.110
+
+  tuspdm204:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm204/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8111:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.111
+
+  tuspdm205:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm205/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8112:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.112
+
+  tuspdm206:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm206/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8113:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.113
+
+  tuspdm207:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm207/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8114:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.114
+
+  tuspdm208:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm208/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8115:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.115
+
+  tuspdm209:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm209/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8116:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.116
+
+  tuspdm210:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm210/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8117:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.117
+
+  tuspdm211:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm211/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8118:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.118
+
+  tuspdm212:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm212/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8119:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.119
+
+  tuspdm304:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm304/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8125:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.125
+
+  tuspdm305:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm305/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8126:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.126
+
+  tuspdm401:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm401/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8147:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.147
+
+  tuspdm402:
+    image: httpd:latest
+    volumes:
+      - ./config/tuspdm402/apache:/usr/local/apache2/htdocs/
+    ports:
+      - "8148:80"
+    networks:
+      app_network:
+        ipv4_address: 172.21.84.148
+
+
+
+networks:
+  app_network:
+    ipam:
+      config:
+        - subnet: 172.21.84.0/24
